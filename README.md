@@ -1,6 +1,10 @@
 # **PyMLSuite - Automated Machine Learning Pipeline**
 
-*********** WORK IN PROGRESS - project development has started on feb. 2025  **********
+## **🛠️ WORK IN PROGRESS 
+Project development has started on feb. 2025, core features are planned to be achieved in May 2025
+
+## **📚 Author**
+Marc Ennaji
 
 ## **📌 Project Overview (For Non-Technical Users)**
 
@@ -77,8 +81,6 @@ pytest -n auto
 
 ## **📚 Contributing & Support**
 For now, the development is still ongoing. When the main features will be completed, contributions will be welcome.
-
-For any questions, reach out via marc.ennaji@pm.me.
 
 ---
 
