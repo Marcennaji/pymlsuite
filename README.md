@@ -1,12 +1,14 @@
 # **PyMLSuite - Automated Machine Learning Pipeline**
 
 ## **🛠️ WORK IN PROGRESS 
-Project development has started on feb. 2025, core features are planned to be achieved in May 2025
+Project development has started on February 2025, core features are planned to be completed in May 2025
 
-## **📚 Author**
-Marc Ennaji
+## **👤 Author**
+Marc Ennaji  
+[🔗 LinkedIn Profile](https://www.linkedin.com/in/marcennaji/)
 
-## **📌 Project Overview (For Non-Technical Users)**
+
+## **📌 Project Overview **
 
 ### **What is PyMLSuite?**
 PyMLSuite is an open-source **Machine Learning Automation tool** that helps businesses and developers **train, compare, deploy, and monitor machine learning models** efficiently. It provides an easy way to select the best model for structured/tabular data and deploy it as an API.
@@ -17,7 +19,7 @@ PyMLSuite is an open-source **Machine Learning Automation tool** that helps busi
 - **Simplifies ML adoption**: Allows businesses to use ML without deep expertise.
 - **Open-source & flexible**: Easily customizable for various industries.
 
-### **Real-World Use Cases**
+### **Some real-World Use Cases :**
 - **Fraud Detection**: Detect fraudulent transactions using historical patterns.
 - **Customer Churn Prediction**: Identify users likely to stop using a service.
 - **Healthcare Risk Analysis**: Predict diseases or health risks from patient data.
@@ -25,7 +27,7 @@ PyMLSuite is an open-source **Machine Learning Automation tool** that helps busi
 
 ---
 
-## **🚀 Quick Start Guide (For Developers & Data Scientists)**
+## **🚀 Quick Start Guide **
 
 ### **Installation**
 #### ✅ Using `pip` (Local Installation)
