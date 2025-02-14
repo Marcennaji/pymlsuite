@@ -1,0 +1,33 @@
+name: Run Tests on Merge
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-xdist mlflow datasets
+
+      - name: Download Real-World Dataset
+        run: python -c 'from pymlsuite.model.train import get_real_world_data; get_real_world_data()'
+
+      - name: Run Parallel Tests
+        run: pytest -n auto

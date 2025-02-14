@@ -1,0 +1,26 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+venv/
+.env
+
+# Ignore dataset and model files
+data/
+models/
+*.pkl
+*.h5
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore IDE and OS-specific files
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore Python virtual environments
+venv-pymlsuite/
