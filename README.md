@@ -29,8 +29,8 @@ PyMLSuite is an open-source **Machine Learning Automation tool** that helps busi
 
 ## **🚀 Quick Start Guide **
 
-## 🔹 Prerequisites
-Install Khiops manually, by following these [🔗 instructions ](https://khiops.org/setup/)
+### 🔹 Prerequisites
+Install the Khiops python library manually, by following these [🔗 instructions ](https://khiops.org/setup/)
 
 
 ### **Installation**
@@ -42,7 +42,7 @@ pip install fastapi uvicorn scikit-learn xgboost pandas numpy mlflow requests wa
 #### ✅ Using Docker
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_GITHUB_USERNAME/PyMLSuite.git
+git clone https://github.com/marcennaji/PyMLSuite.git
 cd PyMLSuite
 
 # Build and run the Docker container
