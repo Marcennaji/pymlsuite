@@ -1,0 +1,54 @@
+{
+    // Use IPython as the default terminal interpreter
+    "python.terminal.launchArgs": ["-m", "IPython"],
+
+    // Use Jedi for Spyder-like auto-completion and IntelliSense
+    "python.languageServer": "Jedi",
+
+    // Enable Ruff as the default linter (instead of Flake8)
+    "python.linting.enabled": true,
+    "python.linting.ruffEnabled": true,
+
+    // Disable other linters to avoid conflicts
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": false,
+
+    // Enable Black as the default formatter
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+
+    // Ensure code actions (fix linting issues automatically on save)
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+
+    // Enable inline variable display in the interactive window
+    "jupyter.variables.showInDataViewer": true,
+
+    // Automatically run common startup commands (like in Spyder)
+    "jupyter.runStartupCommands": [
+        "%matplotlib inline",
+        "import numpy as np",
+        "import pandas as pd"
+    ],
+
+    // Automatically display Matplotlib plots inline (like Spyder)
+    "python.dataScience.showPlotViewer": true,
+
+    // Run selection in interactive mode when pressing F9 (like in Spyder)
+    "keybindings": [
+        {
+            "key": "f9",
+            "command": "python.execSelectionInTerminal",
+            "when": "editorTextFocus"
+        }
+    ],
+
+    // Automatically show function signatures and docstrings
+    "editor.hover.enabled": true,
+
+    // Show workspace symbols (like Spyder's object inspector)
+    "editor.parameterHints.enabled": true
+}
