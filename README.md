@@ -61,7 +61,7 @@ docker run -p 8000:8000 pymlsuite
 #### **Installing Khiops (Optional but Recommended)**
 To compare **Khiops vs. Scikit-Learn models**, you must install the **Khiops binaries**.  
 Follow the official [🔗 Khiops installation guide](https://khiops.org/setup/).
-When you will have installed the Khiops binaries, then you will be able to install the Khiops Python library with pip, as described in the installation guide.
+When you will have installed the Khiops application (containing the binaries), then you will be able to install the Khiops Python library with pip, as described in the Khiops installation guide.
 
 #### ✅ Running Tests Locally
 ```bash
