@@ -1,14 +1,13 @@
 # **PyMLSuite - Automated Machine Learning Pipeline**
 
-## **🛠️ WORK IN PROGRESS 
-Project development has started on February 2025, core features are planned to be completed in May 2025
-
 ## **👤 Author**
-Marc Ennaji  
+Marc Ennaji 
 [🔗 LinkedIn Profile](https://www.linkedin.com/in/marcennaji/)
 
+## **🛠️ WORK IN PROGRESS**
+Project development has started in **February 2025**, and core features are planned to be completed in **May 2025**.
 
-## **📌 Project Overview **
+## **📌 Project Overview (For Non-Technical Users)**
 
 ### **What is PyMLSuite?**
 PyMLSuite is an open-source **Machine Learning Automation tool** that helps businesses and developers **train, compare, deploy, and monitor machine learning models** efficiently. It provides an easy way to select the best model for structured/tabular data and deploy it as an API.
@@ -19,36 +18,49 @@ PyMLSuite is an open-source **Machine Learning Automation tool** that helps busi
 - **Simplifies ML adoption**: Allows businesses to use ML without deep expertise.
 - **Open-source & flexible**: Easily customizable for various industries.
 
-### **Some real-World Use Cases :**
+### **Real-World Use Cases**
 - **Fraud Detection**: Detect fraudulent transactions using historical patterns.
 - **Customer Churn Prediction**: Identify users likely to stop using a service.
 - **Healthcare Risk Analysis**: Predict diseases or health risks from patient data.
 - **E-commerce Recommendations**: Suggest products based on user behavior.
 
+### **Cloud Deployment**
+PyMLSuite will be deployed on **Heroku**, providing easy access via a REST API.
+
+#### **Deploying to Heroku**
+To deploy PyMLSuite to Heroku, use the following commands:
+```bash
+heroku create pymlsuite-app
+git push heroku main
+heroku ps:scale web=1
+heroku open
+```
+This ensures that the ML models are accessible via a **cloud-based API** without requiring local setup.
+
 ---
 
-## **🚀 Quick Start Guide **
-
-### 🔹 Prerequisites
-Install the Khiops python library manually, by following these [🔗 instructions ](https://khiops.org/setup/)
-
+## **🚀 Quick Start Guide (For Developers & Data Scientists)**
 
 ### **Installation**
 #### ✅ Using `pip` (Local Installation)
 ```bash
-pip install fastapi uvicorn scikit-learn xgboost pandas numpy mlflow requests wandb dvc python-dotenv pytest pytest-xdist requests datasets
+pip install fastapi uvicorn scikit-learn xgboost pandas numpy mlflow requests khiops wandb dvc python-dotenv pytest pytest-xdist requests datasets
 ```
 
 #### ✅ Using Docker
 ```bash
 # Clone the repository
-git clone https://github.com/marcennaji/PyMLSuite.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/PyMLSuite.git
 cd PyMLSuite
 
 # Build and run the Docker container
 docker build -t pymlsuite .
 docker run -p 8000:8000 pymlsuite
 ```
+
+#### **Installing Khiops (Optional but Recommended)**
+To compare **Khiops vs. Scikit-Learn models**, you must install the **Khiops binaries**.  
+Follow the official [🔗 Khiops installation guide](https://khiops.org/setup/).
 
 #### ✅ Running Tests Locally
 ```bash
@@ -75,6 +87,9 @@ pytest -n auto
 | **CI/CD** | GitHub Actions |
 | **Containerization** | Docker, Docker Compose |
 | **Dataset Management** | DVC (Data Version Control) |
+| **Cloud Deployment** | Heroku |
+| **Code Formatting & Linting** | Black, Ruff (pre-commit hooks) |
+| **Data Validation & Models** | Pydantic |
 
 ### **Core Features**
 1. **Automated Model Selection**: Compares Khiops, RandomForest, and XGBoost to choose the best-performing model.
@@ -82,15 +97,24 @@ pytest -n auto
 3. **Continuous Integration (CI)**: Every code change is tested using GitHub Actions.
 4. **Parallelized Testing**: Ensures fast and scalable model validation.
 5. **Real-World Dataset Support**: Prepares and trains models on large-scale tabular datasets.
+6. **Cloud Deployment**: Runs on **Heroku** for easy access.
+7. **Data Validation with Pydantic**: Ensures API request validation and structured data handling.
 
 ---
 
 ## **📚 Contributing & Support**
-For now, the development is still ongoing. When the main features will be completed, contributions will be welcome.
+We welcome contributions! If you’d like to enhance PyMLSuite, please:
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+---
+
+## **📩 Contact**
+For questions or contributions, reach out via [LinkedIn](https://www.linkedin.com/in/marcennaji) or open an issue on GitHub.
 
 ---
 
 ## **📜 License**
 PyMLSuite is licensed under the MIT License. See `LICENSE` for details.
-
 
