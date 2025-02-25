@@ -1,4 +1,4 @@
-# **PyMLSuite - Automated Machine Learning Pipeline**
+# **PyMLSuite: K-Means Benchmarking Tool**
 
 ## **👤 Author**
 Marc Ennaji 
@@ -9,46 +9,57 @@ Project development has started in **February 2025**, and core features are plan
 
 ## **📌 Project Overview (For Non-Technical Users)**
 
-### **What is PyMLSuite?**
-PyMLSuite is an open-source **Machine Learning Automation tool** that helps businesses and developers **train, compare, deploy, and monitor machine learning models** efficiently. It provides an easy way to select the best model for structured/tabular data and deploy it as an API.
+PyMLSuite: K-Means Benchmarking Tool
+🚀 Compare K-Means from Scikit-learn vs. Enneade (Khiops K-Means)
+PyMLSuite is an open-source benchmarking suite designed to compare Scikit-learn's K-Means with Enneade (Khiops' K-Means implementation). It provides automated tools for evaluating clustering performance, execution speed, and scalability on structured/tabular data.
 
-### **Why is it useful?**
-- **Reduces manual ML work**: Automates model training, selection, and deployment.
-- **Ensures accuracy**: Picks the best model based on real-world performance.
-- **Simplifies ML adoption**: Allows businesses to use ML without deep expertise.
-- **Open-source & flexible**: Easily customizable for various industries.
+📌 Why Use PyMLSuite?
+✅ Compare K-Means implementations → Evaluate accuracy, speed, and scalability.
+✅ Automated Experiments → Run multiple tests with MLflow logging.
+✅ Data Versioning & Reproducibility → Track datasets using DVC.
+✅ Visual Benchmarking → Generate clustering reports with matplotlib & seaborn.
+✅ Deploy an API → Run clustering on new data via a FastAPI service.
 
-### **Real-World Use Cases**
-- **Fraud Detection**: Detect fraudulent transactions using historical patterns.
-- **Customer Churn Prediction**: Identify users likely to stop using a service.
-- **Healthcare Risk Analysis**: Predict diseases or health risks from patient data.
-- **E-commerce Recommendations**: Suggest products based on user behavior.
+🔹 Real-World Use Cases
+🔹 Customer Segmentation → Identify user clusters based on behavior.
+🔹 Anomaly Detection → Detect unusual patterns in financial or security data.
+🔹 Image Compression → Cluster pixel values for reducing image sizes.
+🔹 Genetic Data Clustering → Group similar genetic sequences for research.
 
-### **Cloud Deployment**
-PyMLSuite will be deployed on **Heroku**, providing easy access via a REST API.
+🛠️ Technical Overview
+Tech Stack
+Component	Technology Used
+Benchmarking	Khiops (Enneade), Scikit-learn (K-Means)
+Data Processing	Pandas, NumPy
+Experiment Tracking	MLflow, Weights & Biases
+Visualization	Matplotlib, Seaborn
+Testing & Validation	Pytest, Pytest-xdist
+CI/CD	GitHub Actions
+Containerization	Docker, Docker Compose
+Dataset Management	DVC (Data Version Control)
+API & Deployment	FastAPI, Heroku
+Code Quality	Black, Ruff (pre-commit hooks)
+📌 Core Features
+✅ K-Means Algorithm Comparison → Benchmark Scikit-learn vs. Enneade with real datasets.
+✅ Performance Metrics → Compute Silhouette Score, Davies-Bouldin Index, Execution Time.
+✅ Experiment Logging → Track results with MLflow & Weights & Biases.
+✅ Visualization & Reporting → Generate clustering plots & performance reports.
+✅ API for Predictions → Deploy a FastAPI service for clustering on new datasets.
+✅ Cloud-Ready Deployment → Run benchmarks locally or deploy on Heroku.
 
-#### **Deploying to Heroku**
-To deploy PyMLSuite to Heroku, use the following commands:
-```bash
-heroku create pymlsuite-app
-git push heroku main
-heroku ps:scale web=1
-heroku open
-```
-This ensures that the ML models are accessible via a **cloud-based API** without requiring local setup.
+📅 Quick Start Guide
+Installation
+✅ Using pip (Local Installation)
 
----
+bash
+Copier
+Modifier
+pip install fastapi uvicorn scikit-learn pandas numpy mlflow requests khiops wandb dvc python-dotenv pytest pytest-xdist matplotlib seaborn
+✅ Using Docker
 
-## **🚀 Quick Start Guide (For Developers & Data Scientists)**
-
-### **Installation**
-#### ✅ Using `pip` (Local Installation)
-```bash
-pip install fastapi uvicorn scikit-learn xgboost pandas numpy mlflow requests khiops wandb dvc python-dotenv pytest pytest-xdist requests datasets
-```
-
-#### ✅ Using Docker
-```bash
+bash
+Copier
+Modifier
 # Clone the repository
 git clone https://github.com/marcennaji/PyMLSuite.git
 cd PyMLSuite
@@ -56,52 +67,42 @@ cd PyMLSuite
 # Build and run the Docker container
 docker build -t pymlsuite .
 docker run -p 8000:8000 pymlsuite
-```
+🛠 Running Benchmarks (Scikit-learn K-Means vs. Enneade)
+1️⃣ Train & Compare Clustering Models
+Run the benchmark script to compare both implementations:
 
-#### **Installing Khiops (Optional but Recommended)**
-To compare **Khiops vs. Scikit-Learn models**, you must install the **Khiops binaries**.  
-Follow the official [🔗 Khiops installation guide](https://khiops.org/setup/).
-When you will have installed the Khiops application (containing the binaries), then you will be able to install the Khiops Python library with pip, as described in the Khiops installation guide.
+bash
+Copier
+Modifier
+python pymlsuite/benchmark_kmeans.py --dataset datasets/sample.csv
+The script will:
+✅ Train K-Means (Scikit-learn) and Enneade (Khiops K-Means).
+✅ Compute performance metrics (Silhouette score, inertia, execution time).
+✅ Log results in MLflow and generate visual reports.
 
-#### ✅ Running Tests Locally
-```bash
+🚀 Deploying to Heroku (Optional, for API Integration)
+bash
+Copier
+Modifier
+heroku create pymlsuite-app
+git push heroku main
+heroku ps:scale web=1
+heroku open
+This makes clustering models accessible via a FastAPI-based REST API.
+
+✅ Running Tests Locally
+✅ Unit tests for benchmarking scripts:
+
+bash
+Copier
+Modifier
 pytest
-```
+✅ Parallelized testing (for speed optimization):
 
-#### ✅ Running Tests in Parallel (For Speed Optimization)
-```bash
+bash
+Copier
+Modifier
 pytest -n auto
-```
-
----
-
-## **🛠️ Technical Overview**
-
-### **Tech Stack**
-| Component | Technology Used |
-|-----------|----------------|
-| **Backend API** | FastAPI |
-| **Model Training** | Khiops, Scikit-Learn, XGBoost |
-| **Data Processing** | Pandas, NumPy |
-| **Model Tracking** | MLflow, Weights & Biases |
-| **Testing** | Pytest, Pytest-xdist (Parallelization) |
-| **CI/CD** | GitHub Actions |
-| **Containerization** | Docker, Docker Compose |
-| **Dataset Management** | DVC (Data Version Control) |
-| **Cloud Deployment** | Heroku |
-| **Code Formatting & Linting** | Black, Ruff (pre-commit hooks) |
-| **Data Validation & Models** | Pydantic |
-
-### **Core Features**
-1. **Automated Model Selection**: Compares Khiops, RandomForest, and XGBoost to choose the best-performing model.
-2. **API Deployment**: The selected model is deployed as a REST API via FastAPI.
-3. **Continuous Integration (CI)**: Every code change is tested using GitHub Actions.
-4. **Parallelized Testing**: Ensures fast and scalable model validation.
-5. **Real-World Dataset Support**: Prepares and trains models on large-scale tabular datasets.
-6. **Cloud Deployment**: Runs on **Heroku** for easy access.
-7. **Data Validation with Pydantic**: Ensures API request validation and structured data handling.
-
----
 
 ## **📚 Contributing & Support**
 We welcome contributions! If you’d like to enhance PyMLSuite, please:
