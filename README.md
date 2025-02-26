@@ -1,4 +1,4 @@
-# **PyMLSuite: K-Means Benchmarking Tool**
+# **ClustXpert: Easy and Flexible Clustering**
 
 ## **👤 Author**
 Marc Ennaji 
@@ -9,53 +9,22 @@ Project development has started in **February 2025**, and core features are plan
 
 ## **📌 Project Overview (For Non-Technical Users)**
 
-PyMLSuite is an open-source **ML benchmarking suite** designed, in its V1, to compare **Scikit-learn's K-Means** with **Enneade (Khiops' K-Means implementation)**. It provides automated tools for **evaluating clustering performance, execution speed, and scalability** on structured/tabular data.
-Future work may include other ML algorithms implementations to benchmark.
+ClustXpert is a **powerful yet user-friendly** clustering tool that makes advanced data clustering **accessible to everyone**.  
+
+This project is a fork of **Khiops Enneade**, an application I originally developed under the supervision of **Vincent Lemaire (Data Scientist)**. While the original **Enneade** remains available *as-is* on the Khiops website (based on an **older, unsupported version of Khiops**), **ClustXpert is built on the latest version of Khiops**, bringing improved performance, stability, and compatibility.  
+
+ClustXpert is designed to be **easy to use for beginners**, while still offering **high configurability** for advanced users.  
 
 ---
 
-## 📌 Why Use PyMLSuite?
+## 📌 **Why Use ClustXpert?**  
 
-✅ **Compare K-Means implementations** → Evaluate **accuracy, speed, and scalability**.  
-✅ **Automated Experiments** → Run multiple tests with **MLflow logging**.  
-✅ **Data Versioning & Reproducibility** → Track datasets using **DVC**.  
-✅ **Visual Benchmarking** → Generate clustering reports with **matplotlib & seaborn**.  
-✅ **Deploy an API** → Run clustering on new data via a **FastAPI service**.  
-
----
-
-## 🔹 Real-World Use Cases for KMeans
-- **Customer Segmentation** → Identify user clusters based on behavior.  
-- **Anomaly Detection** → Detect unusual patterns in financial or security data.  
-- **Image Compression** → Cluster pixel values for reducing image sizes.  
-- **Genetic Data Clustering** → Group similar genetic sequences for research.  
-
----
-
-## 🛠️ Technical Overview
-### Tech Stack
-| **Component**          | **Technology Used**              |
-|----------------------|--------------------------------|
-| **Benchmarking**    | Khiops (Enneade), Scikit-learn (K-Means) |
-| **Data Processing** | Pandas, NumPy                 |
-| **Experiment Tracking** | MLflow, Weights & Biases  |
-| **Visualization**   | Matplotlib, Seaborn           |
-| **Testing & Validation** | Pytest, Pytest-xdist    |
-| **CI/CD**          | GitHub Actions                |
-| **Containerization** | Docker, Docker Compose     |
-| **Dataset Management** | DVC (Data Version Control) |
-| **API & Deployment** | FastAPI, Heroku             |
-| **Code Quality**    | Black, Ruff (pre-commit hooks) |
-
----
-
-## 📌 Core Features
-✅ **K-Means Algorithm Comparison** → Benchmark **Scikit-learn vs. Enneade** with real datasets.  
-✅ **Performance Metrics** → Compute **Silhouette Score, Davies-Bouldin Index, Execution Time**.  
-✅ **Experiment Logging** → Track results with **MLflow & Weights & Biases**.  
-✅ **Visualization & Reporting** → Generate clustering plots & performance reports.  
-✅ **API for Predictions** → Deploy a **FastAPI** service for clustering on new datasets.  
-✅ **Cloud-Ready Deployment** → Run benchmarks locally or deploy on **Heroku**.  
+✅ **Super easy to use** → Start clustering with just **one command**!  
+✅ **No need for one-hot encoding** → Native support for categorical variables.  
+✅ **Works with relational data (multi-table support)** → No need to merge tables manually.  
+✅ **Highly flexible** → Fine-tune clustering settings if needed.  
+✅ **Optimized cluster initialization** → Get better, more stable results.  
+✅ **Modern & scalable** → Built with MLOps best practices (data versioning, experiment tracking, CI/CD).  
 
 ---
 
@@ -68,31 +37,41 @@ pip install fastapi uvicorn scikit-learn pandas numpy mlflow requests wandb dvc 
 ✅ **Using Docker**  
 ```bash
 # Clone the repository
-git clone https://github.com/marcennaji/PyMLSuite.git
-cd PyMLSuite
+git clone https://github.com/marcennaji/clustxpert.git
+cd clustxpert
 
 # Build and run the Docker container
-docker build -t pymlsuite .
-docker run -p 8000:8000 pymlsuite
+docker build -t clustxpert .
+docker run -p 8000:8000 clustxpert
 ```
 
-### 🛠 Running Benchmarks (Scikit-learn K-Means vs. Enneade)
-1️⃣ Train & Compare Clustering Models
-
-Run the benchmark script to compare both implementations:
+### Training and evaluating on a dataset**  
+If you just want to **run clustering with the best default settings**, simply use:  
 
 ```bash
-python pymlsuite/benchmark_kmeans.py --dataset datasets/sample.csv
+python clustxpert/clustering.py --dataset datasets/sample.csv
 ```
-The script will:
+---
+✅ No need to configure anything – ClustXpert automatically handles preprocessing and parameter tuning.
+✅ It just works!
 
-✅ Train K-Means (Scikit-learn) and Enneade (Khiops K-Means).  
-✅ Compute performance metrics (Silhouette score, inertia, execution time).  
-✅ Log results in MLflow and generate visual reports.
+⚙️ Flexible Customization (For Advanced Users)
+If you want more control, ClustXpert lets you fine-tune your clustering:
+
+```bash
+python clustxpert/clustering.py --dataset datasets/sample.csv --n_clusters 5 --init_method "kmeans++" --max_iter 200
+```
+You can configure:
+✔ Number of clusters
+✔ Initialization strategy (e.g., smart heuristics, custom seeds)
+✔ Max iterations, distance metrics, categorical handling...
+
+💡 Default settings are optimized, so customization is completely optional!
+
 
 ### 🚀 Deploying to Heroku (Optional, for API Integration)
 ```bash
-heroku create pymlsuite-app
+heroku create clustxpert-app
 git push heroku main
 heroku ps:scale web=1
 heroku open
@@ -111,8 +90,24 @@ pytest
 pytest -n auto
 ```
 
+
+## 🛠️ Technical Overview
+| **Component**          | **Technology Used**              |
+|----------------------|--------------------------------|
+| **Data Processing** | Pandas, NumPy                 |
+| **Experiment Tracking** | MLflow, Weights & Biases  |
+| **Visualization**   | Matplotlib, Seaborn           |
+| **Testing & Validation** | Pytest, Pytest-xdist    |
+| **CI/CD**          | GitHub Actions                |
+| **Containerization** | Docker, Docker Compose     |
+| **Dataset Management** | DVC (Data Version Control) |
+| **API & Deployment** | FastAPI, Heroku             |
+| **Code Quality**    | Black, Ruff (pre-commit hooks) |
+
+
+
 ## **📚 Contributing & Support**
-We welcome contributions! If you’d like to enhance PyMLSuite, please:
+We welcome contributions! If you’d like to enhance clustxpert, please:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
@@ -124,6 +119,12 @@ For questions or contributions, reach out via [LinkedIn](https://www.linkedin.co
 
 ---
 
-## **📜 License**
-PyMLSuite is licensed under the MIT License. See `LICENSE` for details.
+### 📜 License & Credits
+ClustXpert is licensed under BSD-3.
+
+Original Enneade: I developed the first version of Enneade under the supervision of Vincent Lemaire (Data Scientist at Orange). This original version is still available as-is on the Khiops website, but it is not maintained and runs on an older version of Khiops.
+
+ClustXpert is a fork that brings Enneade to the latest Khiops version, improving performance, maintainability, and usability.
+
+
 
