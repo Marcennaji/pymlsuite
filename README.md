@@ -52,11 +52,9 @@ If you just want to **run clustering with the best default settings**, simply us
 python clustxpert/clustering.py --dataset datasets/sample.csv
 ```
 ---
-✅ No need to configure anything – ClustXpert automatically handles preprocessing and parameter tuning.
-✅ It just works!
 
 ### ⚙️ Flexible Customization (For Advanced Users)
-If you want more control, ClustXpert lets you fine-tune your clustering:
+If you want more control, ClustXpert lets you fine-tune your clustering, for example:
 
 ```bash
 python clustxpert/clustering.py --dataset datasets/sample.csv --n_clusters 5 --init_method "kmeans++" --max_iter 200
