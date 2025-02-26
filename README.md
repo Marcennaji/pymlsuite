@@ -60,9 +60,13 @@ If you want more control, ClustXpert lets you fine-tune your clustering, for exa
 python clustxpert/clustering.py --dataset datasets/sample.csv --n_clusters 5 --init_method "kmeans++" --max_iter 200
 ```
 You can configure:
+
 ✔ Number of clusters
+
 ✔ Initialization strategy (e.g., smart heuristics, custom seeds)
+
 ✔ Max iterations, distance metrics, categorical handling...
+
 ✔ Pre-processing methods
 
 
