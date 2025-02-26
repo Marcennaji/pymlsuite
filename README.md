@@ -11,7 +11,7 @@ Project development has started in **February 2025**, and core features are plan
 
 ClustXpert is a **powerful yet user-friendly** clustering tool that makes advanced data clustering **accessible to everyone**.  
 
-This project is a fork of **Khiops Enneade**, an application I originally developed under the supervision of **Vincent Lemaire (Data Scientist)**. While the original **Enneade** remains available *as-is* on the Khiops website (based on an **older, unsupported version of Khiops**), **ClustXpert is built on the latest version of Khiops**, bringing improved performance, stability, and compatibility.  
+This project is a fork of **Khiops Enneade**, an application I originally developed under the supervision of **Vincent Lemaire (Research Scientist and Research Program Manager at Orange Labs)**. While the original **Enneade** remains available *as-is* on the Khiops website (based on an **older, unsupported version of Khiops**), **ClustXpert is built on the latest version of Khiops**, bringing improved performance, stability, and compatibility.  
 
 ClustXpert is designed to be **easy to use for beginners**, while still offering **high configurability** for advanced users.  
 
@@ -45,7 +45,7 @@ docker build -t clustxpert .
 docker run -p 8000:8000 clustxpert
 ```
 
-### Training and evaluating on a dataset**  
+### **Training and evaluating on a dataset**
 If you just want to **run clustering with the best default settings**, simply use:  
 
 ```bash
@@ -55,7 +55,7 @@ python clustxpert/clustering.py --dataset datasets/sample.csv
 ✅ No need to configure anything – ClustXpert automatically handles preprocessing and parameter tuning.
 ✅ It just works!
 
-⚙️ Flexible Customization (For Advanced Users)
+### ⚙️ Flexible Customization (For Advanced Users)
 If you want more control, ClustXpert lets you fine-tune your clustering:
 
 ```bash
@@ -65,8 +65,7 @@ You can configure:
 ✔ Number of clusters
 ✔ Initialization strategy (e.g., smart heuristics, custom seeds)
 ✔ Max iterations, distance metrics, categorical handling...
-
-💡 Default settings are optimized, so customization is completely optional!
+✔ Pre-processing methods
 
 
 ### 🚀 Deploying to Heroku (Optional, for API Integration)
@@ -122,7 +121,7 @@ For questions or contributions, reach out via [LinkedIn](https://www.linkedin.co
 ### 📜 License & Credits
 ClustXpert is licensed under BSD-3.
 
-Original Enneade: I developed the first version of Enneade under the supervision of Vincent Lemaire (Data Scientist at Orange). This original version is still available as-is on the Khiops website, but it is not maintained and runs on an older version of Khiops.
+Original Enneade: I developed the first version of Enneade under the supervision of Vincent Lemaire (Research Scientist and Research Program Manager at Orange Labs). This original version is still available as-is on the Khiops website, but it is not maintained and runs on an older version of Khiops.
 
 ClustXpert is a fork that brings Enneade to the latest Khiops version, improving performance, maintainability, and usability.
 
