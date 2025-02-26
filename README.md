@@ -95,7 +95,9 @@ pytest -n auto
 ## 🛠️ Technical Overview
 | **Component**          | **Technology Used**              |
 |----------------------|--------------------------------|
+| **Languages** | core in C++, API in Python 3.x                |
 | **Data Processing** | Pandas, NumPy                 |
+| **Clustering** | Khiops Enneade                 |
 | **Experiment Tracking** | MLflow, Weights & Biases  |
 | **Visualization**   | Matplotlib, Seaborn           |
 | **Testing & Validation** | Pytest, Pytest-xdist    |
